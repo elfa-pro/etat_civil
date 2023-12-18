@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Enregistrement | Etat Civil</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/enregistrer.css">
+</head>
+<body background="images/gaide.jpg">
+    <!-- form section start -->
+    <section class="section-form">
+        <h1>Enregistrement</h1>
+        <div class="container">
+            <!-- /form -->
+            <div>
+                <div class="maquette-principale">
+                    <div class="alert-close">
+                        <span class="fa fa-close"></span>
+                    </div>
+                    <div class="image_form align-self">
+                        <div class="left_grid_info">
+                            <img src="images/image.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="content-form">
+                        <h2>Enregistrer</h2>
+                        <p>Veuillez completer tous case avec un (<font color="red">*</font>)</p>
+                        <form action="/authentification/traitement" method="post">
+                            <label>Prénom : <font color="red">*</font></label>
+                            <input type="text" name="prenom" placeholder="Votre Prénom" required="">
+
+                            <label>Nom : <font color="red">*</font></label>
+                            <input type="text" name="nom" placeholder="Votre Nom" required="">
+
+                            <label>Numéro Agent : <font color="red">*</font></label>
+                            <input type="text" name="num_agent" placeholder="Votre Numéro Agent" required="">
+
+                            <label>Nom d'Utilisateur : <font color="red">*</font></label>
+                            <input type="email" name="email" placeholder="Votre Nom d'Utilisateur" required="8">
+
+                            <label>Mot de passe : <font color="red">*</font></label>
+                            <input type="password" name="password" placeholder="Votre Mot de passe" required="10">
+
+                            <div class="condition">
+                                <input type="checkbox"><p>J'accepte les conditions d'utilisation</p>
+                            </div>
+                            <button class="btn" type="submit">S'Enregistrer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- //form -->
+        </div>
+        <!-- copyright-->
+        <div class="copyright text-center">
+            <p class="copy-footer-29">© 2023 Athentification. Tous droits Reserves | Designed by <b>2N2F</b></p>
+        </div>
+        <!-- //copyright-->
+    </section>
+    <!-- //form section start -->
+    <script>
+        function previewPhoto() {
+            var preview = document.getElementById('photo-preview');
+            var fileInput = document.getElementById('photo');
+            var file = fileInput.files[0];
+    
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.innerHTML = '<img src="' + e.target.result + '" alt="Photo">';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.innerHTML = '';
+            }
+        }
+    
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            var nom = document.getElementById('nom').value;
+            var prenom = document.getElementById('prenom').value;
+            var photo = document.getElementById('photo').files[0];
+    
+            // Afficher les informations saisies
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<h2>Informations saisies :</h2>' +
+                                  '<p>Nom : ' + nom + '</p>' +
+                                  '<p>Prénom : ' + prenom + '</p>' +
+                                  '<p>Photo : <img src="' + URL.createObjectURL(photo) + '" alt="Photo" style="border-radius: 50%;"></p>';
+        });
+    </script>
+</body>
+</html>

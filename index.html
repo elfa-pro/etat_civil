@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Authentifacation | Etat Civil</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/connexion.css">
+</head>
+<body background="images/gaide.jpg">
+    <!-- form section start -->
+    <section class="section-form">
+        <h1>Authentification</h1>
+        <div class="container">
+            <!-- /form -->
+            <div>
+                <div class="maquette-principale">
+                    <div class="alert-close">
+                        <span class="fa fa-close"></span>
+                    </div>
+                    <div class="image_form align-self">
+                        <div class="left_grid_info">
+                            <img src="images/image.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="content-form">
+                        <h2>Connexion</h2>
+                        <p>Benvenue Chers Agents sur l'application,<br>Veuillez-vous connecter</p>
+                        <form action="/authentification/traitement" method="post">
+                            <input type="email" class="email" name="email" placeholder="Votre Nom d'Utilisateur" required="8">
+                            <input type="password" class="password" name="password" placeholder="Votre Mot de passe" required="10">
+                            <button class="btn" type="submit">S'Authentifier</button>
+                        </form>
+                        <div clas="inscription">
+                            <p>Vous etes un(e) nouveau(lle) agent(e) de la mairie ?</p>
+                            <button class="btn"><a href="enregistrer.html">S'Enregistrer</a></button>
+                            <a href="accueil.html">accueil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //form -->
+        </div>
+        <!-- copyright-->
+        <div class="copyright">
+            <p class="copy-footer-29">© 2023 Athentification. Tous droits Reservés | Designed by <b>2N2F</b></p>
+        </div>
+        <!-- //copyright-->
+    </section>
+    <!-- //form section start -->
+</body>
+</html>
